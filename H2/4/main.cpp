@@ -1,0 +1,22 @@
+#include "Splash.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	freopen("F:\\for_my_freopen\\freopen.txt","w",stdout);
+	int _size, x, y;
+	cin >> _size;
+	Splash splash(_size);
+	splash.buildMap();
+	int op;
+	cin >> op;
+	while(op--) {
+		cin >> x >> y;
+		splash.actAt(x, y);
+	}
+	cout << splash.getScore() << endl;
+	fclose(stdout);
+	return 0;
+}
